@@ -26,6 +26,6 @@ pip3 install .
 In order to start the Flaks Application execute the following command:
 
 ```bash
-flask --app main run --debug
+python3 main.py
 ```
 
