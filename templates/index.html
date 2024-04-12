@@ -4,10 +4,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flask Playground App</title>
-        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="/static/style.css" />
     </head>
     <body>
-        <h1 class="text-2xl font-bold">Flask Playground App</h1>
+        <header>
+            <h1>Yet another <span class="todo-title">TODO</span> App</h1>
+        </header>
+        <main>
+
+            <h3 class="text-center">Create TODO's</h3>
+            <form class="create-todo-form" method="post" action="create_todo">
+                <input name="todo" type="text" id="create-todo-input" placeholder="Create TODO..."/>
+                <input type="submit" id="create-todo-button" value="Create" />
+            </form>
+
+            <h3 class="text-center">Open TODO's</h3>
+
+            <div class="clearfix">
+            {% for todo in open_todos %}
+                <div class="todo">
+                    <h4>{{todo}}</h4>
+                    <div class="todo-actions">
+                        <a href="/complete_todo/{{todo}}">Complete</a>
+                    </div>
+                </div>
+            {%endfor%}
+            </div>
+
+
+            <h3 class="text-center">Closed TODO's</h3>
+            {% for todo in closed_todos %}
+                <div class="todo">
+                    <h4>{{todo}}</h4>
+                </div>
+            {%endfor%}
+        </main>
     </body>
 </html>
