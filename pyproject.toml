@@ -1,0 +1,12 @@
+[project]
+name = "fhgr-flask-playground"
+version = "0.1"
+description = "Playground for Flask"
+dependencies = [
+    "flask"
+]
+
+[tool.pyright]
+exclude = ["venv"]
+venvPath = "."
+venv = "venv"
